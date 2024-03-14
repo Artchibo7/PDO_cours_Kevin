@@ -2,14 +2,16 @@
 
 class Student
 {
+    private $id;
     private $name;
     private $surname;
     private $birthdate;
     private $email;
     private $departmentId;
 
-    public function __construct($name, $surname, $birthdate, $email, $departmentId)
+    public function __construct($id, $name, $surname, $birthdate, $email, $departmentId)
     {
+        $this->name = $id;
         $this->name = $name;
         $this->surname = $surname;
         $this->birthdate = $birthdate;
@@ -17,6 +19,10 @@ class Student
         $this->departmentId = $departmentId;
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
     public function getName()
     {
         return $this->name;

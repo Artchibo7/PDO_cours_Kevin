@@ -1,3 +1,11 @@
+<?php
+
+require_once "./repository/StudentRepository.php";
+
+$studentRepository = new StudentRepository();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +39,20 @@
                         <h2 class="exerciceTitle">Exercice 1</h2>
                         <div class="exerciceboxStorage">
                             <?php
+                            $students = $studentRepository->getAll();
+
+                            echo ("<ul>");
+
+                            foreach($students as $student){
+                                echo (
+                                    "<li>"
+                                    . $student->getName() . " - " . $student->getSurname() .
+                                    "</li>"
+                                );
+                            }
+
+                            echo ("</ul>");
+                            ?>
                             // ========================================================================
                             // Exercice 1 : READ
                             // ========================================================================
